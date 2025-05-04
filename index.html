@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>吳佩蓁的個人網站</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #303f9f;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    nav a:hover {
+      background-color: #283593;
+    }
+    .content {
+      padding: 30px;
+    }
+    .hidden {
+      display: none;
+    }
+    .profile-pic {
+      float: left;
+      margin-right: 20px;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>歡迎來到吳佩蓁的個人網站</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showTab('about')">自我介紹</a>
+    <a href="#" onclick="showTab('portfolio')">作品集</a>
+    <a href="#" onclick="showTab('contact')">聯絡我</a>
+  </nav>
+
+  <div class="content">
+    <div id="about">
+      <img src="jen2.png" alt="吳佩蓁的照片" class="profile-pic">
+      <h2>關於我</h2>
+      <p>我是吳佩蓁，有30年的程式設計和系統導入經驗。現在我發現了更好玩的人工智慧，邀請你和我一起在AI的世界一起成長！</p>
+    </div>
+
+    <div id="portfolio" class="hidden">
+      <h2>AI應用工具介紹</h2>
+      <ul>
+        <li>幫孩子複習功課 ChatGPT  </li>
+        <li>整理重點摘要筆記 NoteboookLM </li>
+        <li>化身作詞作曲家 Suno </li> 
+        <li>讓你成為廣告設計師 Canva </li>
+        <li>不須絞盡腦汁的簡報 Gamma </li>
+      </ul>
+    </div>
+
+    <div id="contact" class="hidden">
+      <h2>聯絡我</h2>
+      <p>Email：peyjen5@gmail.com</p>
+      <p>LinkedIn：<a href="#" target="_blank">linkedin.com/in/你的帳號</a></p>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      document.getElementById('about').classList.add('hidden');
+      document.getElementById('portfolio').classList.add('hidden');
+      document.getElementById('contact').classList.add('hidden');
+      document.getElementById(tabId).classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
