@@ -1,0 +1,127 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>吳佩蓁的個人網站</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e0e0e0;
+    }
+    header {
+      background: #121212;
+      color: #00e5ff;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 0 2px 10px rgba(0, 229, 255, 0.3);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #1e1e1e;
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    }
+    nav a {
+      color: #ffffff;
+      padding: 14px 24px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+    .content {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .hidden {
+      display: none;
+    }
+    .profile-pic {
+      float: left;
+      margin-right: 30px;
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 3px solid #00e5ff;
+      box-shadow: 0 0 15px #00e5ff;
+    }
+    h2 {
+      color: #00e5ff;
+      margin-top: 0;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #00e5ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    歡迎來到吳佩蓁的 AI 個人網站
+  </header>
+  <nav>
+    <a href="#" onclick="showTab(event, 'about')">自我介紹</a>
+    <a href="#" onclick="showTab(event, 'portfolio')">AI應用工具介紹</a>
+    <a href="#" onclick="showTab(event, 'games')">遊戲專區</a>
+    <a href="#" onclick="showTab(event, 'contact')">聯絡我</a>
+  </nav>
+  <div class="content">
+    <div id="about">
+      <img src="jen2.png" alt="吳佩蓁的照片" class="profile-pic">
+      <h2>關於我</h2>
+      <p>
+        我是吳佩蓁，有30年的程式設計和系統導入經驗。現在我發現了更好玩的 AI 應用工具，邀請你一起探索 AI 的新世界！
+      </p>
+    </div>
+    <div id="portfolio" class="hidden">
+      <h2>AI應用工具介紹</h2>
+      <ul>
+        <li>幫孩子複習功課：ChatGPT</li>
+        <li>整理重點摘要筆記：NotebookLM</li>
+        <li>化身作詞作曲家：Suno</li>
+        <li>讓你成為廣告設計師：Canva</li>
+        <li>不須絞盡腦汁的簡報：Gamma</li>
+      </ul>
+    </div>
+    <div id="games" class="hidden">
+      <h2>🎮 遊戲專區</h2>
+      <ul>
+        <li><a href="game/game1.html" target="_blank">五子棋</a></li>
+        <li><a href="game/game3.html" target="_blank">俄羅斯方塊</a></li>
+        <li><a href="game/game2.html" target="_blank">敲磚塊</a></li>
+      </ul>
+    </div>
+    <div id="contact" class="hidden">
+      <h2>聯絡我</h2>
+      <p>Email：<a href="mailto:peyjen5@gmail.com">peyjen5@gmail.com</a></p>
+      <p>LinkedIn：<a href="#" target="_blank">linkedin.com/in/你的帳號</a></p>
+    </div>
+  </div>
+  <script>
+    function showTab(event, tabId) {
+      event.preventDefault();
+      document.getElementById('about').classList.add('hidden');
+      document.getElementById('portfolio').classList.add('hidden');
+      document.getElementById('games').classList.add('hidden');
+      document.getElementById('contact').classList.add('hidden');
+      document.getElementById(tabId).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
