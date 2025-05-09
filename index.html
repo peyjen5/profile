@@ -1,0 +1,324 @@
+ <!-- index.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>吳佩蓁的個人網站</title>
+ <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Orbitron:wght@600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin:  20px;;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e0e0e0;
+    }
+    header {
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+      
+      background: #121212;
+      color: #00e5ff;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 0 2px 10px rgba(0, 229, 255, 0.3);
+    }
+    a.song-link {
+      color: white;
+      text-decoration: none; /* 如不想要底線可加這行 */
+    }
+    nav {
+       position: fixed;
+  top: 100px; /* 根據 header 高度調整 */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+      display: flex;
+      justify-content: center;
+      background: #1e1e1e;
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    }
+    nav a {
+      color: #ffffff;
+      padding: 14px 24px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+    .content {
+      padding:120px 20px;     <!-- 40px 20px; -->
+      max-width: 900px;
+      margin: auto;
+    }
+    .hidden {
+      display: none;
+    }
+    .profile-pic {
+      float: left;
+      margin-right: 30px;
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 3px solid #00e5ff;
+      box-shadow: 0 0 15px #00e5ff;
+    }
+    h2 {
+      color: #00e5ff;
+      margin-top: 0;
+    }
+    h3 {
+      color: #00e5ff;
+      margin-top: 0;
+    }
+
+h1, h2, h3, header {
+  font-family: 'Orbitron', sans-serif;
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #1e1e1e;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #00e5ff;
+    }
+    .resume-entry {
+      background-color: #1e1e1e;
+      border-left: 5px solid #00e5ff;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+    }
+    .resume-entry h3 {
+      color: #00e5ff;
+      margin-bottom: 5px;
+    }
+    .resume-entry p, .resume-entry ul {
+      margin-top: 5px;
+    }
+    .resume-entry ul li {
+      margin-bottom: 8px;
+    }
+    .responsive-text {
+      max-width: 90vw;               /* 最大寬度為視窗的 90% */
+      margin: auto;
+      padding: 16px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .wrap-text {
+      width: 890px;                /* 設定最大寬度 */
+      word-wrap: break-word;       /* 遇到長字也可換行 */
+      overflow-wrap: break-word;   /* 標準做法 */
+      line-height: 1.6;            /* 行距好閱讀 */
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    歡迎來到吳佩蓁的個人網站
+  </header>
+<div style="text-align:center; margin: 20px; font-size: 1.2rem;">
+  👀 總瀏覽次數：<img src="https://hitwebcounter.com/counter/counter.php?page=1234567&style=0006&nbdigits=5" alt="counter">
+</div>
+
+  <nav>
+    <a href="#" onclick="showTab(event, 'about')">關於我</a>
+    <a href="#" onclick="showTab(event, 'resume')">我的履歷</a>
+    <a href="#" onclick="showTab(event, 'portfolio')">AI應用工具介紹</a>
+    <a href="#" onclick="showTab(event, 'games')">遊戲專區</a>
+    <a href="#" onclick="showTab(event, 'contact')">聯絡我</a>
+  </nav>
+  <div class="content">
+    <div id="about">
+      <img src="jen2.png" alt="吳佩蓁的照片" class="profile-pic">
+      <h2>關於我</h2>
+      <p>我是吳佩蓁，有30年的程式設計和系統開發導入經驗；30年前純粹覺得對寫程式很有趣而投入，隨著系統成熟度增加而減少使用者的工作負擔以及縮短工作時間，更讓我沉浸在這個成就感的氛圍裡，現在我發現了更好玩的 AI 應用工具，AI的進程比你我想像的還要快，你準備好了嗎 ? 邀請你一起探索 AI 的新世界！</p>
+    </div>
+    <div id="portfolio" class="hidden">
+      <h2>AI應用工具介紹</h2>
+       <p class="wrap-text">
+        不要讓習慣讓我們忘記改變，跨出舒適圈，可以擴大舒適圈的版圖，你願意嘗試嗎 ? 
+	想想看，每天上班做著重複的事情，有沒有想過可以讓AI幫我們做這些事情呢? 
+        答案是肯定的，以往要靠IT人員寫程式處理的，現在每一個人都可以達成，
+        不需要寫系統需求單去IT部門排隊，用想法實現請AI做事的時代來了。
+        介紹我常用的AI工具
+       </p>
+
+      <ul>
+        <li>  
+	   <div >
+       	      <h3>
+                📘個人專屬家教，幫孩子複習功課：ChatGPT
+              </h3>
+        </li>
+               <p class="wrap-text">
+              學語言最大的門檻是開口說，面對老師不敢開口怕說錯，AI可以讓我克服這個問題，不懂的單字還可以幫我解釋，即使笨到狗都懶得吠，AI永遠帶著耐心和鼓勵。
+              </p>
+
+            <p class="wrap-text"> 
+            孩子的學業讓你無力輔導了嗎 ? 請AI家教可以解決這個問題，平常可以出題幫孩子複習，讓我隨時掌握孩子的學習成效。
+            </p>
+	
+        <li>
+	    <h3>
+		📓整理重點摘要筆記：NotebookLM
+	    </h3>
+            <p class="wrap-text">
+            手上一堆檔案，考試有那麼多線上教學，沒有時間消化這些資料怎麼辦，我會請NoteBookLM當我的秘書整理重點，再針對我要的重點做深度學習，大大縮短我的時間。
+            </p>
+
+        </li>
+  	              
+
+        <li>
+           <h3>
+          🎹化身作詞作曲家：Suno	   
+           </h3>
+          <p class="wrap-text">
+	      有想法就有音樂，和AI訴說心情，無論喜、怒、哀、樂，都可以為你創造一首屬於你的音樂，一起欣賞AI的創作吧 !
+          </p>
+
+      🎵<a class="song-link" href="主動飛翔.mp3" target="_blank">主動飛翔</a><br>
+
+      🎵<a class="song-link" href="Ride the Breeze.mp3" target="_blank">Ride the Breeze</a>
+          
+        </li>
+       
+        <li>
+         <h3>
+        🎨讓你的想法變成影片嗎 讓你成為設計師Sora
+         </h3>
+         <p class="wrap-text">
+	      現實世界不可能發生的，在AI世界裡沒有不可能，Sor讓夢想實現 
+          </p>
+           <a class="video-link" href="孔子.mp4" target="_blank">至聖先師好學不倦，穿越來學AI了</a>
+
+        </li>
+        <li>
+         <h3>
+            🧑‍🏫不須絞盡腦汁的簡報：Gamma    
+         </h3>          
+         <p class="wrap-text">
+            工作專案進度報告、計畫成效報告，簡報最難的部分就是找不到開始，常常讓我無從下手，現在只要抽絲給AI，馬上有滔滔不絕的想法，5分鐘可以完成30分鐘的簡報，有沒讓你很想嘗試了呢 ? 
+         </p>
+
+
+         </h3>
+        </li>
+      </ul>
+    </div>
+    <div id="games" class="hidden">
+      <h2>🎮 遊戲專區</h2>
+       <p class="wrap-text">
+        這些遊戲是AI寫的，實現不需要程式設計師也能寫程式。
+       </p>
+
+      <ul>
+        <li><a href="./game/game1.html" target="_blank">五子棋</a></li>
+        <li><a href="./game/game3.html" target="_blank">俄羅斯方塊</a></li>
+        <li><a href="./game/game2.html" target="_blank">敲磚塊</a></li>
+      </ul>
+    </div>
+    <div id="resume" class="hidden">
+      <h2>我的履歷</h2>
+      <div class="resume-entry">
+        <h3>英屬維京群島商利達行國際事業有限公司（2018/01/02 - 2024/12/31）</h3>
+        <p><strong>行政專員</strong></p>
+        <ul>
+          <li>營運分析報表設計與優化：開發高效能數據分析報表，提升管理決策準確性，支援營運評估與績效追蹤。</li>
+          <li>程式開發簡化行政與業務流程：自主開發自動化工具，優化行政與業務作業，降低人工負擔，提高工作效率。</li>
+          <li>機房與系統維護。</li>
+          <li>SQL Server、MySQL 資料庫管理：監控與維護核心資料庫系統，確保穩定性與高效運作。</li>
+          <li>NAS 儲存設備維護：優化資料備份與存取機制，確保資料安全無虞。</li>
+          <li>Power Mail Server 管理：確保內部與外部通信順暢無阻。</li>
+        </ul>
+      </div>
+      <div class="resume-entry">
+        <h3>國軍台中總醫院（2007/04/02 – 2017/12/31）</h3>
+        <p><strong>軟體工程師</strong></p>
+        <ul>
+          <li>醫療系統維護（HIS、PACS、EMR）</li>
+          <li>資料庫管理（Oracle、MS SQL）</li>
+          <li>程式開發（Delphi、VBA）</li>
+          <li>快速排除醫院系統故障，確保病患資料不受影響</li>
+          <li>跨部門溝通與協作，與醫療單位開發自動化報表系統，減少人工輸入錯誤</li>
+          <li>與院內同仁共同制定最佳維護方案，提升系統運作效能</li>
+          <li>運用Oracle Procedure，定時將總院異動的資料同步到分院降低維護人力需求，減少 30% 人工作業負擔</li>
+        </ul>
+      </div>
+      <div class="resume-entry">
+        <h3>嘉義基督教醫院（2005/09 – 2006/06）</h3>
+        <p><strong>軟體工程師</strong></p>
+        <ul>
+          <li>參與衛生署試辦計畫系統建置，確保數據準確性及政策試行過程中資料即時性，提升計畫執行效率。</li>
+          <li>負責住院申報系統的維護與流程優化，提升申報正確率與效率。</li>
+          <li>設計並維護疾病分析系統，協助疾病分類人員更精準完成疾病編碼讓病歷更完整。</li>
+        </ul>
+      </div>
+      <div class="resume-entry">
+        <h3>國軍台南醫院（2000/09 - 2004/03）</h3>
+        <p><strong>軟體工程師</strong></p>
+        <ul>
+          <li>醫療系統開發與導入（使用者訪談與廠商協作）</li>
+          <li>主導與醫療與行政單位訪談需求，確認系統設計符合實務運作。</li>
+          <li>與廠商合作，橋接需求與技術，確保專案如期落地並提供支援。</li>
+        </ul>
+      </div>
+      <div class="resume-entry">
+        <h3>穩泰資訊（1992/06 - 2000/08）</h3>
+        <p><strong>系統分析師</strong></p>
+        <ul>
+          <li>與企業及醫療單位深入訪談，分析流程並轉化為系統架構。</li>
+          <li>系統開發經驗涵蓋進銷存系統、會計系統、薪資系統、醫療系統。</li>
+          <li>從需求訪查、系統開發到上線導入，提供一站式整合解決方案。</li>
+        </ul>
+      </div>
+    </div>
+    <div id="contact" class="hidden">
+      <h2>聯絡我</h2>
+      <p>Email：<a href="mailto:peyjen5@gmail.com">peyjen5@gmail.com</a></p>
+      <p>手機：<a href="#" target="_blank">0921-512-717</a></p>
+    </div>
+  </div>
+  <script>
+    function showTab(event, tabId) {
+      event.preventDefault();
+      ['about','portfolio','games','resume','contact'].forEach(id => {
+        document.getElementById(id)?.classList.add('hidden');
+      });
+      document.getElementById(tabId)?.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
